@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root 'comic_books#index'
-  resources :comic_books, only: [:show]
+  root 'series_books#index'
+  resources :series_books, only: [:show] do
+    resources :comic_books, only: [:show]
+  end
 end

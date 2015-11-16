@@ -1,0 +1,31 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <section id='series'>
+      <h1><%= @series_book.title %></h1>
+      <%= image_tag @series_book.image.url(:medium), { class: "img-thumbnail" } %>
+      <dl class="dl-horizontal">
+        <dt>Editora</dt>
+        <dd><%= @series_book.publisher %></dd>
+        <dt>Ano</dt>
+        <dd><%= @series_book.year %></dd>
+        <dt>Revisão</dt>
+        <dd><%= @series_book.review %></dd>
+        <dt>Ano de lançamento</dt>
+        <dd><%= @series_book.release %></dd>
+        <dt>Número de edições</dt>
+        <dd><%= @series_book.editions_number %></dd>
+      </dl>
+    </section>
+  </div>
+</div>
+<hr>
+<div class='row'>
+  <section id='chapters'>
+  <% @series_book.comic_books.each do |comic_book| %>
+    <div class='col-md-3'>
+      <%= image_tag comic_book.image.url(:medium), { class: "img-thumbnail" } %>
+      <%= comic_book.title %>
+    </div>
+  <% end %>
+  </section>
+</div>
