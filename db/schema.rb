@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114040322) do
+ActiveRecord::Schema.define(version: 20151116012003) do
 
-  create_table "comic_books", force: :cascade do |t|
+  create_table "series_books", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false

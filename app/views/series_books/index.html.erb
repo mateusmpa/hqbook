@@ -1,0 +1,15 @@
+<div class='row'>
+  <% @series.each do |serie| %>
+    <div class='col-md-4' >
+      <section id=series>
+        <div class='col-md-8' >
+          <p><%= image_tag serie.image.url(:medium), {class: "img-thumbnail"} %></p>
+        </div>
+        <div class='col-sm-4'>
+          <h3><%= serie.title %></h3>
+          <%= link_to 'Ver mais', serie %>
+        </div>
+      </section>
+    </div>
+  <% end %>
+</div>

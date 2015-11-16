@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :comic_book do
+  factory :series_book do
     title 'Avengers'
   end
 end

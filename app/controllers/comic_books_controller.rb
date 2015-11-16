@@ -1,5 +1,6 @@
 class ComicBooksController < ApplicationController
-  def index
-    @comics = ComicBook.all
+
+  def show
   end
+
 end
