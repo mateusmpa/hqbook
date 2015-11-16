@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114040322) do
+ActiveRecord::Schema.define(version: 20151116023526) do
 
   create_table "comic_books", force: :cascade do |t|
     t.string   "title"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "series_book_id"
+  end
+
+  add_index "comic_books", ["series_book_id"], name: "index_comic_books_on_series_book_id"
+
+  create_table "series_books", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "year"
+    t.string   "publisher"
+    t.text     "review"
+    t.date     "release"
+    t.integer  "editions_number"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
