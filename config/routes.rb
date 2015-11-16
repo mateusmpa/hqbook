@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete  '/:likeable_type/:id/like', to: 'likes#destroy', as: 'delete_like'
 
   root 'series_books#index'
-  resources :series_books, only: [:show] do
-    resources :comic_books, only: [:show]
-  end
+  resources :series_books, only: [:show]
+  resources :comic_books, only: [:show]
+  resources :comments, only: [:new, :create]
 end

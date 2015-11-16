@@ -7,4 +7,5 @@ class ComicBook < ActiveRecord::Base
 
   belongs_to :series_book
   has_many :likes, as: :likeable
+  has_many :comments, as: :commentable
 end
