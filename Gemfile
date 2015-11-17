@@ -49,6 +49,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'awesome_print'
   gem 'sqlite3'
+  gem 'devise'
 end
 
 group :development do
