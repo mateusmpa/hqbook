@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116023526) do
+ActiveRecord::Schema.define(version: 20151116231619) do
 
   create_table "comic_books", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20151116023526) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "series_book_id"
+    t.integer  "editions_number"
+    t.text     "review"
+    t.date     "publication_year"
+    t.integer  "edition_number"
   end
 
   add_index "comic_books", ["series_book_id"], name: "index_comic_books_on_series_book_id"
