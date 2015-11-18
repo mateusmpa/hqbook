@@ -44,6 +44,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry'
   gem 'pry-rails'
   gem 'simplecov'
   gem 'rubocop', require: false
