@@ -15,9 +15,9 @@
         <dt>Número de edições</dt>
         <dd><%= @series_book.editions_number %></dd>
         <% if user_signed_in? %>
-          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" value="Curtir">
+          <%= link_to create_like_path(likeable_type:@series_book.class, id: @series_book.id ),  method: :post, class: "btn btn-primary" do %>
             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-          </button>
+          <% end %>
         <% else %>
             <%= link_to 'Logue para curtir!', new_user_session_path, class:"btn btn-default" %>
         <% end %>

@@ -6,4 +6,5 @@ class ComicBook < ActiveRecord::Base
                                                            'image/gif']
 
   belongs_to :series_book
+  has_many :likes, as: :likeable
 end

@@ -20,6 +20,6 @@ feature 'visitor like hq' do
     
     click_on 'Curtir'
 
-    expect(page).to have_content 'Curtido!'
+    expect(page).to have_content 'unlike'
   end
 end
