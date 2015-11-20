@@ -1,0 +1,9 @@
+<%= simple_form_for @series_book do |serie| %>
+  <%= serie.input :title, label: 'Nome:' %>
+  <%= serie.input :publisher, label: 'Autor:' %>
+  <%= serie.input :review, label: 'Sinopse:' %>
+  <%= serie.input :year, label: 'Ano de lançamento:', as: :date, html5: true %>
+  <%= serie.input :editions_number, label: 'Número de edições:' %>
+  <%= serie.input :image, label:'Selecione uma imagem:', as: :file %>
+  <%= serie.submit 'Salvar' %>
+<% end %>
