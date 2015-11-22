@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     @like = Like.create(likeable_type: params[:likeable_type], likeable_id: params[:id], user_id: current_user.id)
     model = params[:likeable_type].constantize.find(params[:id])
 
-    redirect_to model 
+    redirect_to model
   end
 
   def destroy

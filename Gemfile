@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'simplecov'
   gem 'rubocop', require: false
   gem 'awesome_print'
