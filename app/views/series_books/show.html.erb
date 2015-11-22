@@ -1,8 +1,10 @@
 <div class='row'>
-  <div class='col-md-12'>
-    <section id='series'>
-      <h1><%= @series_book.title %></h1>
+  <section id='series'>
+    <div class='col-md-4'>
       <%= image_tag @series_book.image.url(:medium), { class: "img-thumbnail" } %>
+    </div>
+    <div class='col-md-8'>
+      <h1><%= @series_book.title %></h1>
       <dl class="dl-horizontal">
         <dt>Editora</dt>
         <dd><%= @series_book.publisher %></dd>
@@ -30,17 +32,23 @@
             <%= link_to 'Logue para curtir!', new_user_session_path, class:"btn btn-default" %>
         <% end %>
       </dl>
-    </section>
-  </div>
+    </div>
+    <%=  link_to 'Voltar', '/' %>
+  </section>
 </div>
 <hr>
+<h2><%= t 'commons.edition', count: @series_book.comic_books.count %></h2>
+<hr>
 <div class='row'>
-  <section id='chapters'>
   <% @series_book.comic_books.each do |comic_book| %>
-    <div class='col-md-3'>
+  <section id="chapters-<%=comic_book.id%>">
+    <div class='col-md-2'>
       <%= image_tag comic_book.image.url(:medium), { class: "img-thumbnail" } %>
-      <%= comic_book.title %>
     </div>
-  <% end %>
-  </section>
+    <div class='col-md-4'>
+      <h4><%= comic_book.title %> #<%= comic_book.edition_number %></h4>
+      <%= link_to 'Ver mais', series_book_comic_book_path(@series_book.id, comic_book.id) %>
+    </div>
+    </section>
+    <% end %>
 </div>
