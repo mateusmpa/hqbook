@@ -16,7 +16,7 @@
         <dd><%= @series_book.editions_number %></dd>
         <% if user_signed_in? %>
           <% if current_user.id == @like.try(:user).try(:id) %>
-            <%= link_to delete_like_path(likeable_type:@series_book.class, id: @series_book.id), method: :delete, class: "btn btn-danger" do %>
+            <%= link_to "/SeriesBook/#{@series_book.id}/like", method: :delete, class: "btn btn-danger" do %>
               unlike
               <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
             <% end %>
