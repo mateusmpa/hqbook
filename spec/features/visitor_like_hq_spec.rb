@@ -14,7 +14,7 @@ feature 'visitor like hq' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
     page.find(:css, "#series-#{series_book_1.id} a").click
 
     click_on 'Curtir'
@@ -48,7 +48,7 @@ feature 'visitor like hq' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
 
     page.find(:css, "#series-#{series_book_1.id} a").click
 
@@ -70,7 +70,7 @@ feature 'visitor like hq' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
 
     page.find(:css, "#series-#{series_book_1.id} a").click
 

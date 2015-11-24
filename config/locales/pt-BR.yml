@@ -24,3 +24,8 @@
     edition:
       one: 'Edição:'
       other: 'Edições:'
+  date:
+    order:
+      - :day
+      - :month
+      - :year    

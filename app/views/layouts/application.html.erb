@@ -16,7 +16,18 @@
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <%= link_to 'Login', new_user_session_path, class: "btn btn-default navbar-btn"%>
+        <% if user_signed_in? %>
+          <li class='dropdown'>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Meu perfil', profile_path(current_user.id) %></li>
+              <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+        <%= link_to 'Fazer Login', new_user_session_path, class: "btn btn-default navbar-btn"%>
+        <% end %>
       </ul>
     </div>
   </div>

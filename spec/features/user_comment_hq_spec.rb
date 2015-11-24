@@ -9,7 +9,7 @@ feature 'User comment HQ' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
 
     visit comic_book_path(comic_book)
 
@@ -26,11 +26,11 @@ feature 'User comment HQ' do
 
     visit root_path
 
-    click_on 'Login'
+    click_on 'Fazer Login'
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
 
     page.find(:css, "#series-#{comic_book.series_book.id} a").click
     page.find(:css, "#chapters-#{comic_book.id} a").click

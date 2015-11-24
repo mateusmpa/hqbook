@@ -11,7 +11,7 @@ feature 'User comment Series' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
 
     page.find(:css, "#series-#{comic_book.series_book.id} a").click
 
@@ -32,7 +32,7 @@ feature 'User comment Series' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Log in'
+    click_on 'Entrar'
 
     page.find(:css, "#series-#{comic_book.series_book.id} a").click
 
