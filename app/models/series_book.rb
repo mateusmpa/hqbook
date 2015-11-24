@@ -6,5 +6,5 @@ class SeriesBook < ActiveRecord::Base
                                                            'image/gif']
 
   has_many :comic_books
-  has_many :likes , as: :likeable
+  has_many :likes, as: :likeable
 end

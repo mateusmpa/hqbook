@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118195917) do
+ActiveRecord::Schema.define(version: 20151124220224) do
 
   create_table "comic_books", force: :cascade do |t|
     t.string   "title"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20151118195917) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "series_book_id"
-    t.integer  "editions_number"
     t.text     "review"
     t.date     "publication_year"
     t.integer  "edition_number"
@@ -69,9 +68,11 @@ ActiveRecord::Schema.define(version: 20151118195917) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "follower_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["follower_id"], name: "index_users_on_follower_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

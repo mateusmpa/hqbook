@@ -17,3 +17,5 @@
 /tmp
 /coverage
 /public/system
+.ruby-gemset
+.ruby-version
