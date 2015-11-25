@@ -12,15 +12,17 @@
   <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">HQ Book</a>
+      <a class="navbar-brand" href="/">HQ Book</a>
     </div>
     <div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Login', new_user_session_path, class: "btn btn-default navbar-btn"%>
       </ul>
     </div>
   </div>
   </nav>
   <div class='container'>
+    <%= flash[:error] %>
     <%= yield %>
     <footer>
       <p>HQ Book © 2015 - Rede social de histórias em quadrinhos.</p>

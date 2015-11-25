@@ -1,5 +1,7 @@
 class ComicBooksController < ApplicationController
-  def index
-    @comics = ComicBook.all
+  def show
+    @comic = ComicBook.find(params[:id])
+    @comment = Comment.new(commentable: @comic)
+    @comments = Comment.where(commentable: @comic)
   end
 end

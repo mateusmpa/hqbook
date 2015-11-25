@@ -44,11 +44,14 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'simplecov'
   gem 'rubocop', require: false
   gem 'awesome_print'
   gem 'sqlite3'
+  gem 'devise'
 end
 
 group :development do
