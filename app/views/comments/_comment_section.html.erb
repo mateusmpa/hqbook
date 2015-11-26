@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+<%= simple_form_for @comment, url: comments_path do |f| %>
+  <div class="form-group">
+    <%= f.input :description, as: :text, input_html: { class: "form-control" }, label: 'Comentário' %>
+    <%= f.input :commentable_id, as: :hidden %>
+    <%= f.input :commentable_type, as: :hidden %>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary", value: 'Enviar' %>
+<% end %>
+<% elsif %>
+  <p>Necessário estar logado para comentar</p>
+<% end %>
+<hr>
+<section id="comments">
+  <%= render comments %>
+</section>

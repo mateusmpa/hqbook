@@ -14,28 +14,4 @@
   </div>
 </div>
 <hr>
-<% if user_signed_in? %>
-<%= simple_form_for @comment, url: comments_path do |f| %>
-  <div class="form-group">
-    <%= f.input :description, as: :text, input_html: { class: "form-control" }, label: 'Comentário' %>
-    <%= f.input :commentable_id, as: :hidden %>
-    <%= f.input :commentable_type, as: :hidden %>
-  </div>
-    <%= f.button :submit, class: "btn btn-primary", value: 'Enviar' %>
-<% end %>
-<% elsif %>
-<p>Nescessário estar logado para comentar</p>
-<% end %>
-<hr>
-<% @comments.each do |comment| %>
-<section id="comments-<%= comment.id  %>">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <class = "panel-title"><%= comment.user.email %> - <%= comment.created_at %></class>
-    </div>
-    <div class="panel-body">
-      <%= comment.description %>
-    </div>
-  </div>
-</section>
-<% end %>
+<%= render partial: "comments/comment_section", locals: { comments: @comic.comments } %>
