@@ -1,17 +1,19 @@
 require 'rails_helper'
 
-feature 'User comment HQ' do
+feature 'User comment Series' do
   scenario 'successfully' do
     user = create(:user)
     comic_book = create(:comic_book)
 
-    visit new_user_session_path
+    visit root_path
+
+    click_on 'Login'
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_on 'Log in'
 
-    visit comic_book_path(comic_book)
+    page.find(:css, "#series-#{comic_book.series_book.id} a").click
 
     fill_in 'Comentário', with: 'Lorem ipsom'
     click_button 'Enviar'
@@ -33,7 +35,6 @@ feature 'User comment HQ' do
     click_on 'Log in'
 
     page.find(:css, "#series-#{comic_book.series_book.id} a").click
-    page.find(:css, "#chapters-#{comic_book.id} a").click
 
     click_button 'Enviar'
 
@@ -45,7 +46,6 @@ feature 'User comment HQ' do
 
     visit root_path
     page.find(:css, "#series-#{comic_book.series_book.id} a").click
-    page.find(:css, "#chapters-#{comic_book.id} a").click
 
     expect(page).not_to have_css '.comment_description'
     expect(page).not_to have_css '#comment_description'
@@ -56,12 +56,11 @@ feature 'User comment HQ' do
   scenario 'and the data save successfully' do
     comic_book = create(:comic_book)
     travel_to Time.zone.local(2004, 11, 24, 01, 04, 44) do
-      @comment = create(:comment, commentable: comic_book)
+      @comment = create(:comment, commentable: comic_book.series_book)
     end
 
     visit root_path
     page.find(:css, "#series-#{comic_book.series_book.id} a").click
-    page.find(:css, "#chapters-#{comic_book.id} a").click
 
     expect(page).to have_content '24/11/2004 às 01:04'
   end
