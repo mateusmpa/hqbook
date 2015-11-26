@@ -1,0 +1,8 @@
+<h2> Quem curtiu? </h2>
+<% likes.each do |like| %>
+  <div class="panel panel-default" id= "like-<%=like.id%>">
+      <div class="panel-body">
+        <%= like.user.name %>
+      </div>
+  </div>
+<% end %>

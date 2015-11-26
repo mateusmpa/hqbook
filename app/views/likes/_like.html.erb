@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <% if current_user.id == @like.try(:user).try(:id) %>
+    <%= link_to "/SeriesBook/#{book.id}/like", method: :delete, class: "btn btn-danger" do %>
+      unlike
+      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+    <% end %>
+  <% else %>
+    <%= link_to "/SeriesBook/#{book.id}/like",  method: :post, class: "btn btn-primary" do %>
+      Curtir
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to 'Logue para curtir!', new_user_session_path, class:"btn btn-default" %>
+<% end %>
