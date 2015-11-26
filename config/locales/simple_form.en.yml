@@ -10,6 +10,7 @@
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+      successfully: 'Dados alterados com sucesso!'
     # Examples
     # labels:
     #   defaults:

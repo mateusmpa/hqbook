@@ -1,0 +1,8 @@
+<%= image_tag @user.avatar.url(:thumb) %>
+<% if user_signed_in? %>
+  <%= @user.email %>
+<% end %>
+<%= @user.name %>
+<%= @user.city %>
+<%= @user.country %>
+<%= link_to 'Editar meu perfil', edit_user_registration_path %>
