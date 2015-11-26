@@ -3,7 +3,7 @@ FactoryGirl.define do
     name 'David'
     city 'São Paulo'
     country 'Brasil'
-    email 'david.tstp@gmail.com'
+    email 'teste@gmail.com'
     password 'inicial1234'
   end
 end

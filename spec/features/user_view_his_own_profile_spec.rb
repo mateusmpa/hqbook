@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User view own profile' do
-  scenario 'successufuly' do
+  scenario 'successfully' do
     user = create(:user)
 
     visit new_user_session_path
