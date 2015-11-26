@@ -14,11 +14,13 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find_by(likeable_type: params[:likeable_type],
-                         likeable_id: params[:id],
-                         user_id: current_user.id)
-    @like.destroy
-    model = params[:likeable_type].constantize.find(params[:id])
-    redirect_to model
+    @like = Like.find(params[:id])
+    if @like.user.id == current_user.id
+      @model = @like.likeable_type.constantize.find(@like.likeable_id)
+      @like.destroy
+      redirect_to @model
+    else
+      render @model
+    end
   end
 end
