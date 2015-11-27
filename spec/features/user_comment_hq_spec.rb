@@ -8,7 +8,7 @@ feature 'User comment HQ' do
     visit new_user_session_path
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     visit comic_book_path(comic_book)
@@ -40,7 +40,7 @@ feature 'User comment HQ' do
     click_on 'Fazer Login'
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     visit comic_book_path(comic_book)
@@ -59,5 +59,5 @@ feature 'User comment HQ' do
     expect(page).not_to have_css '#comment_description'
     expect(page).not_to have_css '.btn-primary'
     expect(page).to have_content 'Necessário estar logado para comentar'
-  end  
+  end
 end

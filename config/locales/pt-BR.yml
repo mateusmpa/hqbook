@@ -28,4 +28,20 @@
     order:
       - :day
       - :month
-      - :year    
+      - :year
+  activerecord:
+    errors:
+        template:
+            body: There were problems with the following fields
+            header:
+                one: 1 error prohibited this {{model}} from being saved
+                other: "{{count}} errors prohibited this {{model}} from being saved"
+        messages:
+            inclusion: "is not included in the list"
+            exclusion: "is reserved"
+            invalid: "is invalid"
+            confirmation: "doesn't match confirmation"
+            accepted: "must be accepted"
+            empty: "can't be empty"
+            blank: ""
+            default_message: "Por favor, reveja os problemas abaixo:"

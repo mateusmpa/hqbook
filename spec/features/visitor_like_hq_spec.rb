@@ -13,7 +13,7 @@ feature 'visitor like hq' do
     click_on 'Login'
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     within '#series' do
@@ -47,7 +47,7 @@ feature 'visitor like hq' do
     click_on 'Logue para curtir!'
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     visit series_book_path(series_book_1.id)
@@ -69,7 +69,7 @@ feature 'visitor like hq' do
     click_on 'Login'
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     visit series_book_path(series_book_1.id)

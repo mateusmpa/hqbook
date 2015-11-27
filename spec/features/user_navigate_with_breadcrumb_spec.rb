@@ -56,4 +56,14 @@ feature 'User navigate with breadcrumb' do
 
     expect(current_path).to eq(root_path)
   end
+
+  scenario 'go from profile to home' do
+    user = create(:user)
+
+    visit profile_path(user.id)
+
+    within '#breadcrumbs' do
+      click_on 'Home'
+    end
+  end
 end
