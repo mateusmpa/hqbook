@@ -11,19 +11,22 @@
         </div>
         <div class='col-md-8'>
           <h1><%= @series_book.title %></h1>
+          <%= render partial: "likes/like", locals: { book: @series_book } %>
           <dl class="dl-horizontal">
             <dt>Editora</dt>
             <dd><%= @series_book.publisher %></dd>
             <dt>Ano</dt>
             <dd><%= @series_book.year %></dd>
-            <dt>Revisão</dt>
-            <dd><%= @series_book.review %></dd>
             <dt>Ano de lançamento</dt>
             <dd><%= @series_book.release %></dd>
             <dt>Número de edições</dt>
             <dd><%= @series_book.editions_number %></dd>
-            <%= render partial: "likes/like", locals: { book: @series_book } %>
           </dl>
+          <p>Revisão</p>
+            <blockquote>
+              <p class="text-justify"><%= @series_book.review %></p>
+              <footer>Fonte: <a href="https://pt.wikipedia.org/wiki/A_Morte_do_Superman" target="resource window">Wikipedia</a></footer>
+            </blockquote>
         </div>
       </section>
     </div>
