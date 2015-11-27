@@ -1,3 +1,9 @@
+<ol class="breadcrumb" id='breadcrumbs'>
+  <li><a <%= link_to 'Home', root_path %></a></li>
+  <li><a <%= link_to @comic.series_book.title, @comic.series_book %></a></li>
+  <li class="active"><%= @comic.title %></li>
+</ol>
+<section id="comic-book">
 <div class='row'>
   <div class='col-md-3' >
     <%= image_tag @comic.image.url(:medium), {class: "img-thumbnail"}  %>
@@ -5,13 +11,15 @@
   <div class='col-md-9'>
     <h2><%= @comic.title %> #<%= @comic.edition_number %></h2>
     <dl class="dl-horizontal">
+      <dt>Serie:</dt>
+      <dd><%= link_to @comic.series_book.title, @comic.series_book %></dd>
       <dt>Sinopse:</dt>
       <dd><%= @comic.review %></dd>
       <dt>Ano de publicação:</dt>
-      <dd><%= @comic.publication_year %></dd>
+      <dd><%= @comic.publication_year.strftime("%d/%m/%Y") %></dd>
     </dl>
-    <%= link_to 'Voltar', @comic.series_book %>
   </div>
 </div>
+</section>
 <hr>
 <%= render partial: "comments/comment_section", locals: { comments: @comic.comments } %>

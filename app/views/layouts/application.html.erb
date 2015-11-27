@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">HQ Book</a>
@@ -26,18 +26,18 @@
             </ul>
           </li>
         <% else %>
-        <%= link_to 'Fazer Login', new_user_session_path, class: "btn btn-default navbar-btn"%>
+          <%= button_to 'Fazer Login', new_user_session_path, class: "btn btn-default navbar-btn" %>
         <% end %>
       </ul>
     </div>
   </div>
   </nav>
-  <div class='container'>
-    <%= flash[:error] %>
-    <%= yield %>
-    <footer>
-      <p>HQ Book © 2015 - Rede social de histórias em quadrinhos.</p>
-    </footer>
-  </div>
+    <div class='container'  style = "padding: 60px" >
+      <%= flash[:error] %>
+      <%= yield %>
+      <footer>
+        <p>HQ Book © 2015 - Rede social de histórias em quadrinhos.</p>
+      </footer>
+    </div>
 </body>
 </html>

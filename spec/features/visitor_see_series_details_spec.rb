@@ -14,9 +14,7 @@ feature 'visitor see series details' do
     comic_book_2 = create(:comic_book, title: 'Os próprios Deuses',
                                        series_book: series_book_2)
 
-    visit root_path
-
-    page.find(:css, "#series-#{series_book_1.id} a").click
+    visit series_book_path(series_book_1.id)
 
     expect(page).to have_content series_book_1.title
     expect(page).to have_xpath("//img[contains(@src,'avengers.jpg')]")

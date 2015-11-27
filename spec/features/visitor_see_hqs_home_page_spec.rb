@@ -9,6 +9,5 @@ feature 'visitor see hqs home page' do
     expect(page).to have_content 'HQ Book'
     expect(page).to have_content series_book.title
     expect(page).to have_xpath("//img[contains(@src,'avengers.jpg')]")
-    expect(page).to have_content 'Ver mais'
   end
 end
