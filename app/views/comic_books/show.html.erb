@@ -13,11 +13,13 @@
     <dl class="dl-horizontal">
       <dt>Serie:</dt>
       <dd><%= link_to @comic.series_book.title, @comic.series_book %></dd>
-      <dt>Sinopse:</dt>
-      <dd><%= @comic.review %></dd>
       <dt>Ano de publicação:</dt>
       <dd><%= @comic.publication_year.strftime("%d/%m/%Y") %></dd>
     </dl>
+    <dt>Sinopse</dt>
+    <blockquote>
+      <p class="text-justify"><%= @comic.review %></p>
+    </blockquote>
   </div>
 </div>
 </section>

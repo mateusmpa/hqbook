@@ -11,19 +11,21 @@
         </div>
         <div class='col-md-8'>
           <h1><%= @series_book.title %></h1>
+          <%= render partial: "likes/like", locals: { book: @series_book } %>
           <dl class="dl-horizontal">
             <dt>Editora</dt>
             <dd><%= @series_book.publisher %></dd>
             <dt>Ano</dt>
             <dd><%= @series_book.year %></dd>
-            <dt>Revisão</dt>
-            <dd><%= @series_book.review %></dd>
             <dt>Ano de lançamento</dt>
             <dd><%= @series_book.release %></dd>
             <dt>Número de edições</dt>
             <dd><%= @series_book.editions_number %></dd>
-            <%= render partial: "likes/like", locals: { book: @series_book } %>
           </dl>
+          <dt>Revisão</dt>
+            <blockquote>
+              <p class="text-justify"><%= @series_book.review %></p>
+            </blockquote>
         </div>
       </section>
     </div>
@@ -33,12 +35,11 @@
       <% @series_book.comic_books.each do |comic_book| %>
       <section id="chapters-<%=comic_book.id%>">
         <div class='col-md-2'>
+          <%=link_to comic_book_path(comic_book.id) do %>
           <%= image_tag comic_book.image.url(:medium), { class: "img-thumbnail" } %>
+          <% end %>
         </div>
-        <div class='col-md-4'>
-          <h4><%= comic_book.title %> #<%= comic_book.edition_number %></h4>
-          <%= link_to 'Ver mais', comic_book_path(comic_book.id) %>
-        </div>
+
       </section>
       <% end %>
     </div>

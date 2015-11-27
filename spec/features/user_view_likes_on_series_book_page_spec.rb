@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'user view likes on series book page' do
   scenario 'successfully' do
-
     user = create(:user, avatar: File.open(Rails.root.join('spec',
                                                            'images',
                                                            'user_avatar.png')))

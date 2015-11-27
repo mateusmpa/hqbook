@@ -19,7 +19,8 @@ feature 'Visitor see comic details' do
     expect(page).to have_xpath("//img[contains(@src,'avengers01.jpg')]")
     expect(page).to have_content comic_book_1.title
     expect(page).to have_content comic_book_1.review
-    expect(page).to have_content comic_book_1.publication_year.strftime("%d/%m/%Y")
+    expect(page)
+      .to have_content comic_book_1.publication_year.strftime('%d/%m/%Y')
     expect(page).to have_content comic_book_1.edition_number
   end
 end

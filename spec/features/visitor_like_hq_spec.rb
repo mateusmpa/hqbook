@@ -20,7 +20,6 @@ feature 'visitor like hq' do
       click_on series_book_1.title
     end
 
-
     click_on 'Curtir'
 
     expect(page).to have_content 'unlike'

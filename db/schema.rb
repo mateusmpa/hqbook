@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20151124230608) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "series_book_id"
-    t.integer  "editions_number"
     t.text     "review"
     t.date     "publication_year"
     t.integer  "edition_number"
@@ -84,13 +83,13 @@ ActiveRecord::Schema.define(version: 20151124230608) do
     t.string   "name"
     t.string   "city"
     t.string   "country"
+    t.integer  "follower_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.date     "birth_date"
     t.string   "gender"
-    t.integer  "follower_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -7,12 +7,10 @@ feature 'visitor see series details' do
         .open(Rails.root.join('spec', 'images', 'avengers.jpg')))
     series_book_2 = create(
       :series_book, title: 'Injustice - Gods Among Us')
-    comic_book_1 = create(
-      :comic_book, series_book: series_book_1,
-                   image: File
-                    .open(Rails.root.join('spec', 'images', 'avengers01.jpg')))
-    comic_book_2 = create(:comic_book, title: 'Os próprios Deuses',
-                                       series_book: series_book_2)
+    create(:comic_book, series_book: series_book_1,
+                        image: File.open(Rails.root.join('spec',
+                                                         'images',
+                                                         'avengers01.jpg')))
 
     visit series_book_path(series_book_1.id)
 
@@ -24,7 +22,6 @@ feature 'visitor see series details' do
     expect(page).to have_content series_book_1.release
     expect(page).to have_content series_book_1.editions_number
     expect(page).to have_xpath("//img[contains(@src,'avengers01.jpg')]")
-    expect(page).to have_content comic_book_1.title
-    expect(page).not_to have_content comic_book_2.title
+    expect(page).not_to have_content series_book_2.title
   end
 end

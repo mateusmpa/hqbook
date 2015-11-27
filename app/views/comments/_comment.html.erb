@@ -1,6 +1,9 @@
 <div class="panel panel-default" id= "comment-<%=comment.id%>">
     <div class="panel-heading">
-      <class = "panel-title"><a href="<%= profile_path(comment.user) %>"><%= comment.user.name %></a> - <%= comment.created_at.strftime("%d/%m/%Y às %H:%M") %></class>
+      <class = "panel-title">
+        <a href="<%= profile_path(comment.user) %>"><%= comment.user.name %>
+        </a> - <%= comment.created_at.strftime("%d/%m/%Y às %H:%M") %>
+      </class>
     </div>
     <div class="panel-body">
       <%= comment.description %>
