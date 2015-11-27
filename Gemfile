@@ -52,6 +52,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'awesome_print'
   gem 'sqlite3'
+  gem 'faker'
 end
 
 group :development do
