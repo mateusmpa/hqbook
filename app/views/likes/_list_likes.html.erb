@@ -1,8 +1,21 @@
-<h2> Quem curtiu? </h2>
-<% likes.each do |like| %>
-  <div class="panel panel-default" id= "like-<%=like.id%>">
-      <div class="panel-body">
-        <%= like.user.name %>
-      </div>
+<section id=likes>
+  <div class="panel panel-default">
+    <div class="panel-heading"><h2> Quem curtiu? </h2></div>
+    <div class="panel-body">
+      <ul class="list-unstyled">
+        <% likes.each do |like| %>
+            <li id= "like_name-<%=like.id%>">
+              <div class='row'>
+                <div class='col-md-6' >
+                  <%= image_tag like.user.avatar.url(:medium), { class: "img-thumbnail" } %>
+                </div>
+                <div class='col-md-6' >
+                  <a href="<%= profile_path(like.user) %>"><%= like.user.name %></a>
+                </div>
+              <div>
+            </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-<% end %>
+</section>
