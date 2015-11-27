@@ -1,10 +1,10 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edição de perfil</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :avatar, label: 'Selecione uma foto:' ,as: :file %>
+    <%= f.file_field :avatar, label: 'Selecione uma foto:', as: :file, html5: true %>
     <%= f.input :name, label: 'Nome completo:', autofocus: true %>
     <%= f.input :gender, label: 'Sexo:', as: :select, collection: User::GENDER %>
     <%= f.input :city, label: 'Cidade:' %>
@@ -22,12 +22,12 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Salvar" %>
+    <%= f.button :submit, "Salvar", class: "btn btn-primary" %>
   </div>
-<% end %>
-
+<% end %><br />
+<!--
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %> -->

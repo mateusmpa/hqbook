@@ -5,14 +5,14 @@ feature 'Visitor create new profile' do
     visit root_path
 
     click_on 'Login'
-    click_on 'Sign up'
+    click_on 'Cadastre-se'
 
-    fill_in 'Nome completo:', with: 'Wesley Soares'
-    fill_in 'Cidade:', with: 'São Paulo'
-    fill_in 'País:', with: 'Brasil'
-    fill_in 'Email:', with: 'wesley@email.com'
-    fill_in 'Senha:', with: 'abc123456'
-    fill_in 'Confirmação de senha:', with: 'abc123456'
+    fill_in 'Nome completo', with: 'Wesley Soares'
+    fill_in 'Cidade', with: 'São Paulo'
+    fill_in 'País', with: 'Brasil'
+    fill_in 'Email', with: 'wesley@email.com'
+    fill_in 'Senha', with: 'abc123456'
+    fill_in 'Confirmação de senha', with: 'abc123456'
 
     click_on 'Cadastrar'
 

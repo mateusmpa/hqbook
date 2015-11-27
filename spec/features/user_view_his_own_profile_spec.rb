@@ -7,7 +7,7 @@ feature 'User view own profile' do
     visit new_user_session_path
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     click_on user.name
@@ -26,14 +26,14 @@ feature 'User view own profile' do
     visit new_user_session_path
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     click_on user.name
     click_on 'Meu perfil'
     click_on 'Editar meu perfil'
 
-    attach_file('Selecione uma foto:', 'spec/images/user_avatar.png')
+    page.attach_file('Selecione uma foto:', 'spec/images/user_avatar.png')
     fill_in 'Nome completo:', with: 'Wesley Soares'
     fill_in 'Data de nascimento:', with: '09/01/1994'
     select 'Masculino', from: 'Sexo'
@@ -55,7 +55,7 @@ feature 'User view own profile' do
     visit new_user_session_path
 
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Senha', with: user.password
     click_on 'Entrar'
 
     click_on user.name

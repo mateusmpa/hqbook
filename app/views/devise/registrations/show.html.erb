@@ -1,8 +1,26 @@
-<%= image_tag @user.avatar.url(:thumb) %>
-<% if user_signed_in? %>
-  <%= @user.email %>
-<% end %>
-<%= @user.name %>
-<%= @user.city %>
-<%= @user.country %>
-<%= link_to 'Editar meu perfil', edit_user_registration_path %>
+<ol class="breadcrumb" id='breadcrumbs'>
+  <li><a <%= link_to 'Home', root_path %></a></li>
+  <li class="active"><%= @user.name %></li>
+</ol>
+<div class="row" >
+  <div class="col-md-4">
+    <%= image_tag @user.avatar.url(:original), class: "thumbnail" %>
+  </div>
+  <div class="col-md-6" >
+    <h2><%= @user.name %></h2>
+    <% if user_signed_in? %>
+    <dl>
+      <dt>Email</dt>
+      <dd><%= @user.email %><dd>
+    <% end %>
+    <dl>
+      <dt>Cidade</dt>
+      <dd><%= @user.city %></dd>
+      <dt>País</dt>
+      <dd><%= @user.country %></dd><br />
+      <% if user_signed_in? %>
+        <%= link_to 'Editar meu perfil', edit_user_registration_path, class: "btn btn-primary" %>
+      <% end %>
+    </dl>
+  </div>
+</div>
