@@ -15,7 +15,11 @@ feature 'visitor like hq' do
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_on 'Entrar'
-    page.find(:css, "#series-#{series_book_1.id} a").click
+
+    within '#series' do
+      click_on series_book_1.title
+    end
+
 
     click_on 'Curtir'
 
@@ -27,9 +31,7 @@ feature 'visitor like hq' do
       :series_book, image: File
        .open(Rails.root.join('spec', 'images', 'avengers.jpg')))
 
-    visit root_path
-
-    page.find(:css, "#series-#{series_book_1.id} a").click
+    visit series_book_path(series_book_1.id)
 
     expect(page).to have_content 'Logue para curtir!'
   end
@@ -40,9 +42,7 @@ feature 'visitor like hq' do
        .open(Rails.root.join('spec', 'images', 'avengers.jpg')))
     user = create(:user)
 
-    visit root_path
-
-    page.find(:css, "#series-#{series_book_1.id} a").click
+    visit series_book_path(series_book_1.id)
 
     click_on 'Logue para curtir!'
 
@@ -50,7 +50,7 @@ feature 'visitor like hq' do
     fill_in 'Password', with: user.password
     click_on 'Entrar'
 
-    page.find(:css, "#series-#{series_book_1.id} a").click
+    visit series_book_path(series_book_1.id)
 
     click_on 'Curtir'
 
@@ -72,7 +72,7 @@ feature 'visitor like hq' do
     fill_in 'Password', with: user.password
     click_on 'Entrar'
 
-    page.find(:css, "#series-#{series_book_1.id} a").click
+    visit series_book_path(series_book_1.id)
 
     click_on 'Curtir'
 

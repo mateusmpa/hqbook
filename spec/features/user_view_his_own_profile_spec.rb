@@ -61,6 +61,6 @@ feature 'User view own profile' do
     click_on user.name
     click_on 'Sair'
 
-    expect(page).to have_content('Fazer Login')
+    expect(page).to have_button('Fazer Login')
   end
 end
