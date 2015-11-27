@@ -13,7 +13,7 @@ feature 'User navigate with breadcrumb' do
 
     visit comic_book_path(comic_book_1.id)
 
-    within "#breadcrumbs" do
+    within '#breadcrumbs' do
       click_on series_book_1.title
     end
 
@@ -25,14 +25,14 @@ feature 'User navigate with breadcrumb' do
       :series_book, image: File
         .open(Rails.root.join('spec', 'images', 'avengers.jpg')))
 
-    comic_book_1 = create(
-      :comic_book, series_book: series_book_1,
-                   image: File
-                    .open(Rails.root.join('spec', 'images', 'avengers01.jpg')))
+    create(:comic_book, series_book: series_book_1,
+                        image: File.open(Rails.root.join('spec',
+                                                         'images',
+                                                         'avengers01.jpg')))
 
     visit series_book_path(series_book_1.id)
 
-    within "#breadcrumbs" do
+    within '#breadcrumbs' do
       click_on 'Home'
     end
 
@@ -50,7 +50,7 @@ feature 'User navigate with breadcrumb' do
 
     visit comic_book_path(comic_book_1.id)
 
-    within "#breadcrumbs" do
+    within '#breadcrumbs' do
       click_on 'Home'
     end
 

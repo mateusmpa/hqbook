@@ -59,5 +59,5 @@ feature 'User comment HQ' do
     expect(page).not_to have_css '#comment_description'
     expect(page).not_to have_css '.btn-primary'
     expect(page).to have_content 'Necessário estar logado para comentar'
-  end  
+  end
 end
