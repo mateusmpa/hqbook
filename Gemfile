@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'paperclip'
 gem 'devise'
+gem 'faker'
 
 group :test do
   gem 'capybara'
@@ -52,7 +53,6 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'awesome_print'
   gem 'sqlite3'
-  gem 'faker'
 end
 
 group :development do

@@ -24,4 +24,4 @@
 </div>
 </section>
 <hr>
-<%= render partial: "comments/comment_section", locals: { comments: @comic.comments } %>
+<%= render partial: "comments/comment_section", locals: { comments: @comic.comments.order(created_at: :desc) } %>
