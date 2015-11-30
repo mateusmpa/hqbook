@@ -44,9 +44,9 @@
       <% end %>
     </div>
     <hr>
-    <%= render partial: "comments/comment_section", locals: { comments: @series_book.comments } %>
+    <%= render partial: "comments/comment_section", locals: { comments: @series_book.comments.order(created_at: :desc) } %>
   </div>
   <div class='col-md-2'>
-    <%= render partial: "likes/list_likes", locals: { likes: @series_book.likes } %>
+    <%= render partial: "likes/list_likes", locals: { likes: @series_book.likes.order(created_at: :desc) } %>
   </div>
 </div>

@@ -4,7 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.file_field :avatar, label: 'Selecione uma foto:', as: :file, html5: true %>
+    <%= f.input :avatar, label: 'Selecione uma foto:', as: :file, html5: true %>
     <%= f.input :name, label: 'Nome completo:', autofocus: true %>
     <%= f.input :gender, label: 'Sexo:', as: :select, collection: User::GENDER %>
     <%= f.input :city, label: 'Cidade:' %>
