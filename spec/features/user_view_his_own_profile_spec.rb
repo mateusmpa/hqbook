@@ -33,7 +33,10 @@ feature 'User view own profile' do
     click_on 'Meu perfil'
     click_on 'Editar meu perfil'
 
-    page.attach_file('Selecione uma foto:', 'spec/images/user_avatar.png')
+
+    within '#information' do
+      attach_file('Foto de perfil', 'spec/images/user_avatar.png')
+    end
     fill_in 'Nome completo:', with: 'Wesley Soares'
     fill_in 'Data de nascimento:', with: '09/01/1994'
     select 'Masculino', from: 'Sexo'
